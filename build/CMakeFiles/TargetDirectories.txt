@@ -1,0 +1,3 @@
+C:/Users/Kelly/source/repos/pathtracer/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/Kelly/source/repos/pathtracer/build/CMakeFiles/ZERO_CHECK.dir
+C:/Users/Kelly/source/repos/pathtracer/build/pathtracer/CMakeFiles/pathtracer.dir
