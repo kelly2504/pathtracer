@@ -58,7 +58,7 @@ color ray_color(const ray& r) {
 int main() {
     std::cout << "Working directory: " << std::filesystem::current_path() << std::endl;
     // build an absolute, resolved path for the output file so failures are clear
-    std::filesystem::path outPath = std::filesystem::absolute(std::filesystem::current_path() / ".." / "imagetest_1.ppm");
+    std::filesystem::path outPath = std::filesystem::absolute(std::filesystem::current_path()  / "imagetest_1.ppm");
     std::cout << "Resolved output path: " << outPath << std::endl;
     std::ofstream image(outPath);
 
