@@ -15,10 +15,10 @@
     <ClInclude Include="C:\Users\Kelly\source\repos\pathtracer\pathtracer\color.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Kelly\source\repos\pathtracer\pathtracer\Vec3.h">
+    <ClInclude Include="C:\Users\Kelly\source\repos\pathtracer\pathtracer\vec3.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="C:\Users\Kelly\source\repos\pathtracer\pathtracer\Ray.h">
+    <ClInclude Include="C:\Users\Kelly\source\repos\pathtracer\pathtracer\ray.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

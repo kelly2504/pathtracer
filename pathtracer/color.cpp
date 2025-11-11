@@ -1,6 +1,5 @@
 #include "color.h"
 
-
 //declare an external file that other functions can use
 extern std::ofstream image;
 

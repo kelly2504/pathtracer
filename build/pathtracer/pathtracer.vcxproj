@@ -328,8 +328,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="C:\Users\Kelly\source\repos\pathtracer\pathtracer\pathtracer.h" />
     <ClCompile Include="C:\Users\Kelly\source\repos\pathtracer\pathtracer\color.cpp" />
     <ClInclude Include="C:\Users\Kelly\source\repos\pathtracer\pathtracer\color.h" />
-    <ClInclude Include="C:\Users\Kelly\source\repos\pathtracer\pathtracer\Vec3.h" />
-    <ClInclude Include="C:\Users\Kelly\source\repos\pathtracer\pathtracer\Ray.h" />
+    <ClInclude Include="C:\Users\Kelly\source\repos\pathtracer\pathtracer\vec3.h" />
+    <ClInclude Include="C:\Users\Kelly\source\repos\pathtracer\pathtracer\ray.h" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

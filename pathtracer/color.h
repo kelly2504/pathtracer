@@ -1,7 +1,7 @@
 #ifndef COLOR_H
 #define COLOR_H
 
-#include "vec3.h"
+#include "vec3.h" // match actual filename/casing
 #include <iostream>
 #include <fstream>
 

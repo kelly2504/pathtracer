@@ -5,6 +5,8 @@
 #include <iostream>
 #include <fstream>
 #include <filesystem>
+#include <cerrno>
+#include <cstring>
 
 using namespace std;
 
@@ -14,10 +16,6 @@ using namespace std;
 #include "vec3.h"
 //#include "Windows.h"
 
-using namespace std;
-
-std::ofstream image("..\\imagetest.ppm");
-
 //function to add a sphere to the scene if the ray hits within the sphere radius
 double hit_sphere(const point3& center, double radius, const ray& r) {
     vec3 oc = center - r.origin(); //vector from ray origin to sphere center
@@ -26,44 +24,48 @@ double hit_sphere(const point3& center, double radius, const ray& r) {
     auto c = oc.length_squared() - (radius * radius);
     auto discriminant = (b * b) - (a * c); //discriminant of the quadratic equation
     //std::cout << "Discriminant: " << discriminant << std::endl;
-    return (discriminant > 0); //if discriminant is positive, the ray hits the sphere
+    //return (discriminant >= 0); //if discriminant is positive, the ray hits the sphere
 
-    //if (discriminant < 0) {
-    //    return -1.0; //no hit
-    //}
-    //else {
-    //    return (b - std::sqrt(discriminant)) / (a); //return the distance to the hit point
-    //}
+    if (discriminant < 0) {
+        return -1.0; //no hit
+    }
+    else {
+        return (b - std::sqrt(discriminant)) / (2.0*a); //return the distance to the hit point
+    }
 }
 
 color ray_color(const ray& r) {
     //if the ray hits the sphere, return a color based on the hit
-     if (hit_sphere(point3(0, -1, -1), 0.2 , r)) {
-         return color(1, 0, 0); //return a sphere of red color 
-     }
-    //auto t = hit_sphere(point3(0, -1, -1), 0.5, r);
-    //if (t > 0.0) {
-    //    //calculate the normal at the hit point
-    //    vec3 normal = unit_vector(r.at(t) - vec3(0, -1, -1));
+     //if (hit_sphere(point3(0, -1, -1), 1, r)) {
+     //    return color(1, 0, 0); //return a sphere of red color 
+     //}
+    auto t = hit_sphere(point3(0, 0, -1), 0.5, r);
+    if (t > 0.0) {
+        //calculate the normal at the hit point
+        vec3 normal = unit_vector(r.at(t) - vec3(0, 0, -1));
 
-    //    //return a color based on the normal
-    //    return 0.5 * color(1, 0, 0); //normal is in range [-1, 1], so we add 1 to shift it to [0, 2] and then scale by 0.5
-    //    /*vec3 N = unit_vector(r.at(t) - vec3(0, -1, -1));
-    //    return 0.5 * color(N.x() + 1, N.y() + 1, N.z() + 1);*/
-    //}
+        //return a color based on the normal
+    //   return 0.5 * color(1, 0, 0); //normal is in range [-1, 1], so we add 1 to shift it to [0, 2] and then scale by 0.5
+    vec3 N = unit_vector(r.at(t) - vec3(0, 0, -1));
+    return 0.5 * color(N.x() + 1, N.y() + 1, N.z() + 1);
+    }
 
     vec3 unit_direction = unit_vector(r.direction());
-    auto a = 0.5 * (unit_direction.y() + 2.0);
-    return ((1.0 - a) * color(1.0, 1.0, 1.0)) + (a * color(0.5, 0.7, 1.0));
+    auto a = 0.5 * (unit_direction.y() + 1.0);
+    return (1.0-a)*color(1.0, 1.0, 1.0) + a * color(0.5, 0.7, 1.0);
 }
 
 int main() {
-
-     if (!image.is_open()) {
-         std::cout << "Error: Image file not created" << std::endl;
-     }
     std::cout << "Working directory: " << std::filesystem::current_path() << std::endl;
+    // build an absolute, resolved path for the output file so failures are clear
+    std::filesystem::path outPath = std::filesystem::absolute(std::filesystem::current_path() / ".." / "imagetest_1.ppm");
+    std::cout << "Resolved output path: " << outPath << std::endl;
+    std::ofstream image(outPath);
 
+    if (!image.is_open()) {
+        std::cerr << "Error: Image file not created" << std::endl;
+        return 1;
+    }
     //SetConsoleOutputCP(CP_UTF8);
 
       // Image -- rendered image set- up
@@ -110,15 +112,12 @@ int main() {
             color pixel_color = ray_color(r);
 
             write_color(image, pixel_color);
-
             // if (i == image_width / 2 && j == image_height / 2) {
             // pixel_color = color(1, 0, 0);  // Force center pixel red
 
             // write_color(image, pixel_color);
             // std::clog << "\nCenter pixel set to red.\n";
             // }
-
-
         }
     }
     image.close();
