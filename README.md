@@ -12,4 +12,6 @@ This was a fun project that unfortunately did not take a weekend but could have
 if not for some weird shenanigans I made while trying to debug instead of actually
 understanding the code. 
 But be it known this shall not be my last attempt to path raytracing... hopefully.
-Anyways, here is a picture of the rendered code for now: ![Screenshot](assets\Raytrace_success1.png)
+Anyways, here is a picture of the rendered code for now:
+
+![Screenshot](https://github.com/kelly2504/pathtracer/assets/Raytrace_success1.png)
