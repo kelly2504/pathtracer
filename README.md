@@ -14,4 +14,4 @@ understanding the code.
 But be it known this shall not be my last attempt to path raytracing... hopefully.
 Anyways, here is a picture of the rendered code for now:
 
-![Screenshot](https://github.com/kelly2504/pathtracer/assets/Raytrace_success1.png)
+![Screenshot](assets/Raytrace_success1.png)
