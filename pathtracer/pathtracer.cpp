@@ -30,7 +30,7 @@ double hit_sphere(const point3& center, double radius, const ray& r) {
         return -1.0; //no hit
     }
     else {
-        return (b - std::sqrt(discriminant)) / (2.0*a); //return the distance to the hit point
+        return (b - std::sqrt(discriminant)) / a; //return the distance to the hit point
     }
 }
 
