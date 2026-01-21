@@ -1,8 +1,8 @@
 #ifndef COLOR_H
 #define COLOR_H
 
+#include "common_utility.h"
 #include "vec3.h" // match actual filename/casing
-#include <iostream>
 #include <fstream>
 
 using color = vec3;

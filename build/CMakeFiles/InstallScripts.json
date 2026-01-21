@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/Kelly/source/repos/pathtracer/build/cmake_install.cmake",
+		"C:/Users/Kelly/source/repos/pathtracer/build/pathtracer/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
