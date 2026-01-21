@@ -1,7 +1,7 @@
 #include "color.h"
 
 //declare an external file that other functions can use
-extern std::ofstream image;
+//extern std::ofstream image;
 
 void write_color(std::ostream& out, const color& pixel_color) {
 	auto r = pixel_color.x();

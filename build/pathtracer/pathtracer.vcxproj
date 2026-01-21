@@ -366,10 +366,14 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemGroup>
     <ClCompile Include="C:\Users\Kelly\source\repos\pathtracer\pathtracer\pathtracer.cpp" />
     <ClInclude Include="C:\Users\Kelly\source\repos\pathtracer\pathtracer\pathtracer.h" />
-    <ClCompile Include="C:\Users\Kelly\source\repos\pathtracer\pathtracer\color.cpp" />
     <ClInclude Include="C:\Users\Kelly\source\repos\pathtracer\pathtracer\color.h" />
+    <ClCompile Include="C:\Users\Kelly\source\repos\pathtracer\pathtracer\color.cpp" />
     <ClInclude Include="C:\Users\Kelly\source\repos\pathtracer\pathtracer\vec3.h" />
     <ClInclude Include="C:\Users\Kelly\source\repos\pathtracer\pathtracer\ray.h" />
+    <ClInclude Include="C:\Users\Kelly\source\repos\pathtracer\pathtracer\hittable_list.h" />
+    <ClInclude Include="C:\Users\Kelly\source\repos\pathtracer\pathtracer\Hittable.h" />
+    <ClInclude Include="C:\Users\Kelly\source\repos\pathtracer\pathtracer\sphere.h" />
+    <ClInclude Include="C:\Users\Kelly\source\repos\pathtracer\pathtracer\common_utility.h" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

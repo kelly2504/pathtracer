@@ -1,5 +1,5 @@
-#ifndef COMMON_UTILITY
-#define COMMON_UTILITY
+#ifndef COMMON_UTILITY_H
+#define COMMON_UTILITY_H
 
 #include <cmath>
 #include <iostream>
@@ -21,8 +21,8 @@ inline double degrees_to_radians(double degrees) {
 }
 
 //common headers
-#include "ray.h"
 #include "color.h"
+#include "ray.h"
 #include "vec3.h"
 
 #endif

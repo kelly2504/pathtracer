@@ -1,8 +1,9 @@
-#ifndef HITTABLE
-#define HITTABLE
+#ifndef HITTABLE_H
+#define HITTABLE_H
 
 //HITTABLE - Abstract class that allows an object to ne hit
-#include "ray.h"
+//#include "ray.h"
+#include "common_utility.h"
 
 //to keep count of the objects created
 class hit_record {
