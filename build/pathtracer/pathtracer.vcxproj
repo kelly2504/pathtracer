@@ -374,6 +374,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="C:\Users\Kelly\source\repos\pathtracer\pathtracer\Hittable.h" />
     <ClInclude Include="C:\Users\Kelly\source\repos\pathtracer\pathtracer\sphere.h" />
     <ClInclude Include="C:\Users\Kelly\source\repos\pathtracer\pathtracer\common_utility.h" />
+    <ClInclude Include="C:\Users\Kelly\source\repos\pathtracer\pathtracer\Interval.h" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

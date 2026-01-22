@@ -3,7 +3,7 @@
 #
 
 # Add source to this project's executable.
-add_executable (pathtracer "pathtracer.cpp" "pathtracer.h" "color.h" "color.cpp" "vec3.h"  "ray.h" "hittable_list.h" "Hittable.h" "sphere.h" "common_utility.h")
+add_executable (pathtracer "pathtracer.cpp" "pathtracer.h" "color.h" "color.cpp" "vec3.h"  "ray.h" "hittable_list.h" "Hittable.h" "sphere.h" "common_utility.h" "Interval.h")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET pathtracer PROPERTY CXX_STANDARD 20)

@@ -56,7 +56,7 @@ color ray_color(const ray& r, const hittable& world) {
 
     hit_record rec;
     //checks for the world as a shared pointed instead of going through all objects one at a time
-    if (world.hit(r, 0, infinity, rec)) {
+    if (world.hit(r, interval(0, infinity), rec)) {
         // Map normal from [-1, 1] to [0, 1] color range and clamp
         color result = 0.5 * (rec.normal + color(1,1,1));
         return color(

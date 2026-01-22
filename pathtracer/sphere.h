@@ -3,13 +3,13 @@
 //class that inherits from hittable parent class
 #include "common_utility.h"
 #include "Hittable.h"
-#include "ray.h"
+//#include "ray.h"
 
 class sphere : public hittable {
     public:
         sphere(const point3& center, double radius) : center(center), radius(std::fmax(0,radius)) {}
 
-        bool hit(const ray& r, double ray_tmin, double ray_tmax, hit_record& rec) const override {
+        bool hit(const ray& r, interval ray_t, hit_record& rec) const override {
             vec3 oc = center - r.origin();
             auto a = r.direction().length_squared();
             auto h = dot(r.direction(), oc);
@@ -23,9 +23,15 @@ class sphere : public hittable {
 
             //Find the nearest root that lies in the acceptable range
             auto root = (h - sqrtd) / a;
-            if (root <= ray_tmin || ray_tmax <= root) {
+            // if (root <= ray_t.min || ray_t.max <= root) {
+            //     root = (h + sqrtd) / a;
+            //     if (root <= ray_t.min || ray_t.max <= root) {
+            //         return false;
+            //     }
+            // }
+            if (!ray_t.surrounds(root)) {
                 root = (h + sqrtd) / a;
-                if (root <= ray_tmin || ray_tmax <= root) {
+                if (!ray_t.surrounds(root)) {
                     return false;
                 }
             }

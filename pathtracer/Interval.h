@@ -1,7 +1,7 @@
 #ifndef INTERVAL_H
 #define INTERVAL_H
 
-#include "common_utility.h"
+//#include "common_utility.h"
 
 class interval {
     public:
@@ -23,10 +23,11 @@ class interval {
             return min < x && x < max;
         }
 
-        static const interval empty, universe;
+        static const interval empty;
+        static const interval universe;
     };
 
-    const interval interval::empty = interval(+infinity,-infinity);
-    const interval interval::universe = interval(-infinity, +infinity);
+    //const interval interval::empty    = interval(+infinity,-infinity);
+    //const interval interval::universe = interval(-infinity, +infinity);
 
 #endif
