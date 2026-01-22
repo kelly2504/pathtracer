@@ -75,7 +75,7 @@ int main() {
     //MARK: FILE PATH
     std::cout << "Working directory: " << std::filesystem::current_path() << std::endl;
     // build an absolute, resolved path for the output file so failures are clear
-    std::filesystem::path outPath = std::filesystem::absolute(std::filesystem::current_path()  / "imagetest_2.ppm");
+    std::filesystem::path outPath = std::filesystem::absolute(std::filesystem::current_path()  / "imagetest_4.ppm");
     std::cout << "Resolved output path: " << outPath << std::endl;
     std::ofstream image(outPath);
 
@@ -98,10 +98,14 @@ int main() {
     hittable_list world;
 
     //sphere obejct 1
-    world.add(make_shared<sphere>(point3(0,0,-1), 0.5));
+    world.add(make_shared<sphere>(point3(0,0,-1), 0.3));
 
     //sphere object 2 - that is the world basically
     world.add(make_shared<sphere>(point3(0,-100.5, -1), 100));
+
+    //self improvement: adding two other spheres next to each other
+    world.add(make_shared<sphere>(point3(-1, 0, -1), 0.3));
+    world.add(make_shared<sphere>(point3(1, 0, -1), 0.3));
 
     //camera 
     auto focal_length = 1.0;
