@@ -15,6 +15,7 @@ using namespace std;
 #include "Hittable.h"
 #include "hittable_list.h"
 #include "sphere.h"
+#include "triangle.h"
 // #include "color.h"
 // #include "ray.h"
 // #include "vec3.h"
@@ -75,7 +76,7 @@ int main() {
     //MARK: FILE PATH
     std::cout << "Working directory: " << std::filesystem::current_path() << std::endl;
     // build an absolute, resolved path for the output file so failures are clear
-    std::filesystem::path outPath = std::filesystem::absolute(std::filesystem::current_path()  / "imagetest_4.ppm");
+    std::filesystem::path outPath = std::filesystem::absolute(std::filesystem::current_path()  / "imagetest_5.ppm");
     std::cout << "Resolved output path: " << outPath << std::endl;
     std::ofstream image(outPath);
 
@@ -106,6 +107,8 @@ int main() {
     //self improvement: adding two other spheres next to each other
     world.add(make_shared<sphere>(point3(-1, 0, -1), 0.3));
     world.add(make_shared<sphere>(point3(1, 0, -1), 0.3));
+
+    //world.add(make_shared<Triangle>(point3(-2, 0, -2), point3(-1, 1, -2), point3(2, 0, -1)));
 
     //camera 
     auto focal_length = 1.0;
